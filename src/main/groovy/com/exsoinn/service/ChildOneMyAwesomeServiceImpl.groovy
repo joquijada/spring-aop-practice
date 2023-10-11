@@ -3,11 +3,10 @@ package com.exsoinn.service
 import groovy.util.logging.Slf4j
 
 @Slf4j
-class MyAwesomeServiceImpl implements MyAwesomeService {
-
+class ChildOneMyAwesomeServiceImpl extends MyAwesomeServiceImpl {
   @Override
   void doSomethingSpectacular() {
-    log.info "executing doSomethingSpectacular() in ${this.class.name}"
+    log.info "JMQ: executing doSomethingSpectacular() in ${this.class.name}"
   }
 
   @Override

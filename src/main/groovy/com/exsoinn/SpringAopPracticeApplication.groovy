@@ -19,6 +19,9 @@ class SpringAopPracticeApplication {
     ({ String[] args ->
       MyAwesomeService myAwesomeService = ctx.getBean("myAwesomeService")
       myAwesomeService.doSomethingSpectacular()
+
+      MyAwesomeService childMyAwesomeService = ctx.getBean("childMyAwesomeService")
+      childMyAwesomeService.doSomethingSpectacular()
     })
   }
 }

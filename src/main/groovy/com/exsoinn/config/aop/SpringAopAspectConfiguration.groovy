@@ -1,4 +1,4 @@
-package com.exsoinn.config
+package com.exsoinn.config.aop
 
 import groovy.util.logging.Slf4j
 import org.aspectj.lang.JoinPoint
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy
 
 @EnableAspectJAutoProxy
 @Aspect
-@Configuration
+//@Configuration
 @Slf4j
 class SpringAopAspectConfiguration {
 
@@ -26,7 +26,7 @@ class SpringAopAspectConfiguration {
   /**
    * Advice declarations
    */
-  @Around("com.exsoinn.config.SpringAopAspectConfiguration.interceptAnyMethodInMyAwesomeServiceInterface()")
+  @Around("com.exsoinn.config.aop.SpringAopAspectConfiguration.interceptAnyMethodInMyAwesomeServiceInterface()")
   Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
     log.info "${'*' * 10} BEGIN ADVICE: aroundAdvice ${'*' * 10}"
     Object retVal = proceedingJoinPoint.proceed()
@@ -35,7 +35,7 @@ class SpringAopAspectConfiguration {
     return retVal
   }
 
-  @Around("com.exsoinn.config.SpringAopAspectConfiguration.interceptAnyMethodInMyAwesomeServiceInterface()")
+  @Around("com.exsoinn.config.aop.SpringAopAspectConfiguration.interceptAnyMethodInMyAwesomeServiceInterface()")
   Object aroundAdviceNoOp(ProceedingJoinPoint proceedingJoinPoint) {
     log.info "${'*' * 10} BEGIN ADVICE: aroundAdviceNoOp ${'*' * 10}"
     log.info "${'*' * 10} DOING A NOOP!!!! ${'*' * 10}"
